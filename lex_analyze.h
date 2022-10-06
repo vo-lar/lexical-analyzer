@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstring>
 #define   MAX 22             /*分析表的最大容量*/
-#define OP_MAX 31
+#define OP_MAX 34
 
 struct node {
 	char lexptr[30];
@@ -73,7 +73,10 @@ const oplist op[OP_MAX] =
 	{"|",31,"算符"},
 	{"&",32,"算符"},
 	{"&&",33,"算符"},
-	{"<>",34,"其他"}
+	{"<>",34,"其他"},
+	{"//",35,"界符"},
+	{"/*",36,"界符"},
+	{"*/",37,"界符"}
 };
 
 /*tool*/
@@ -82,3 +85,4 @@ void text_analyse(std::string input, std::string output);
 int Iskeyword(node keyword[], char* is_res);
 bool IsLetter(char c);
 bool IsDigit(char c);
+bool IsPoint(char c);
